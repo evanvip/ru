@@ -4,7 +4,11 @@
   <body>
     {% include nav.html %}
 
-   
+      {% if page.toc==true %}
+      <aside class="toc">
+        {% include toc.html html=content %}
+      </aside>
+    {% endif %}
 
     <div id="main" role="main" class="wrapper-content">
       <div class="container">
@@ -12,11 +16,7 @@
       </div>
     </div>
     
-   {% if page.toc==true %}
-      <aside class="toc">
-        {% include toc.html html=content %}
-      </aside>
-    {% endif %}
+
     
     {% include analytics.html %}
   </body>
